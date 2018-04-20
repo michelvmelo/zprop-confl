@@ -1,0 +1,53 @@
+\documentclass[]{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%\def \zmapw #1 {#1$^{\circ}$}
+
+%opening
+\title{Draft: Z-Property implies confluence for an abstract rewrite system (ARS)}
+\author{}
+\date{}
+
+\begin{document}
+	
+\maketitle	
+
+$\star$  20/04/2018
+	
+	
+
+
+\section{ARS definition}
+We begin our demonstration by defining an abstract rewrite system (A, $\rightarrow$), where A is a set of objects and $\rightarrow$ is a binary relation (also called "reduction" or "rewriting") over A, i.e., $\rightarrow$ $\subseteq$ A$\times$A. \\\\If (a,b) $\in$ $\rightarrow$ and $a, b$ $\in$ A, we write a $\rightarrow$ b and call it "a reduces (or is rewritten) to b".
+
+\section{Reducible object and $\rightarrow$-normal form}
+An object a $\in$ A is called "reducible" if $\exists$ b $\in$ A, b $\ne$ a and a $\rightarrow$ b. \\ If there's no such b, a is called "irreducible" and is in $\rightarrow$-normal form.
+
+\section{Z-Property}
+A map \_$^{\circ}$: A $\rightarrow$ A has the Z-Property for $\rightarrow$ on A if $\forall$ a, b $\in$ A, a $\rightarrow$ b implies b $\twoheadrightarrow$ a$^{\circ}$ $\twoheadrightarrow$ b$^{\circ}$. $\twoheadrightarrow$ can be read as "reduces in zero or more steps to". \\\\
+If $\rightarrow$ admits \_$^{\circ}$, then $\rightarrow$ has the Z-Property.
+
+\section{Confluence}
+To be written.
+
+\section{Z-Property implies Confluence}
+
+\underline{Theorem}: \textit{If $\rightarrow$ has the Z-Property, then $\rightarrow$ is confluent.} \\\\
+\underline{Proof:} suppose \_$^{\circ}$ has the Z-Property for $\rightarrow$. 
+
+\begin{enumerate}
+	\item If a is in $\rightarrow$-normal form, we define a$^{\bullet}$ := a. Otherwise, a$^{\bullet}$ := a$^{\circ}$
+	\item The proof follows by showing that \_$^{\bullet}$: A $\rightarrow$ A also satisfies the Z-Property for $\rightarrow$.
+	
+	By hypothesis, if a $\rightarrow$ b, then b $\twoheadrightarrow$ a$^{\circ}$ $\twoheadrightarrow$ b$^{\circ}$ and by (1), we have \\ a$^{\bullet}$ = a$^{\circ}$, which gives b $\twoheadrightarrow$ a$^{\bullet}$. If b is in $\rightarrow$-normal form, then by (1) we have b$^{\bullet}$ = b so that b$^{\bullet}$ = b = a$^{\circ}$ = a$^{\bullet}$, which gives a$^{\bullet}$ $\twoheadrightarrow$ b$^{\bullet}$.
+	
+	\item
+	\item
+	\item
+	
+\end{enumerate}
+
+
+\end{document}
